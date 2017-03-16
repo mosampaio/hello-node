@@ -12,4 +12,4 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 3000
-CMD ["forever", "-a", "-o", "/logs/mydemoapp.log", "-e", "/logs/mydemoapp.log", "-c", "node", "./bin/www"]
+CMD ["forever", "-a", "-c", "node", "./bin/www"]
