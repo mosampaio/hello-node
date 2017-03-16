@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-node-deployment
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: hello-node
+    spec:
+      containers:
+      - name: hello-node
+        image: mosampaio/hello-node:1.0.0
+        ports:
+        - containerPort: 3000
+        volumeMounts:
+        - name: app-logs
+          mountPath: /app/logs
+      volumes:
+      - name: app-logs
+        emptyDir: {}

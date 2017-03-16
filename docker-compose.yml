@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - logs:/app/logs
+
+volumes:
+
+  logs:
+    driver: local
+
+  maven:
+    driver: local
+
+networks:
+
+  default:
+    driver: bridge

@@ -1,4 +1,4 @@
-FROM node:boron
+FROM yeghishe/nodejs:0.12.7
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -12,4 +12,4 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD ["forever", "-a", "-o", "/logs/mydemoapp.log", "-e", "/logs/mydemoapp.log", "-c", "node", "./bin/www"]
