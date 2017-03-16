@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: hello-node
-        image: mosampaio/hello-node:latest
+        image: mosampaio/hello-node:1.0
         ports:
         - containerPort: 3000
         volumeMounts:
