@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-node-deployment
 spec:
-  replicas: 5
+  replicas: 20
   template:
     metadata:
       labels:
@@ -11,10 +11,10 @@ spec:
     spec:
       containers:
       - name: hello-node
-        image: mosampaio/hello-node:1.0
+        image: mosampaio/hello-node:1.0.3
         env:
         - name: RANDOM_HOST
-          value: "http://random-svc:8000"
+          value: "http://random-service:8000"
         ports:
         - containerPort: 3000
         volumeMounts:
